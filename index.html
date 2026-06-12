@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luxury Stay Jarrdin Apartement Cihampelas</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:
+radial-gradient(circle at top left,rgba(212,175,55,.18),transparent 25%),
+radial-gradient(circle at bottom right,rgba(212,175,55,.12),transparent 25%),
+linear-gradient(135deg,#050505,#111,#080808);
+color:#fff;
+overflow-x:hidden;
+}
+
+nav{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 8%;
+background:rgba(0,0,0,.8);
+backdrop-filter:blur(12px);
+z-index:1000;
+border-bottom:1px solid rgba(212,175,55,.3);
+}
+
+.logo img{
+height:65px;
+}
+
+.menu a{
+color:#fff;
+text-decoration:none;
+margin-left:25px;
+font-weight:600;
+transition:.3s;
+}
+
+.menu a:hover{
+color:#D4AF37;
+}
+
+.hero{
+position:relative;
+overflow:hidden;
+min-height:100vh;
+background:
+linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.78)),
+url('hero.jpg');
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:120px 20px 60px;
+}
+
+canvas{
+position:absolute;
+inset:0;
+}
+
+.gold-glow{
+position:absolute;
+width:600px;
+height:600px;
+border-radius:50%;
+background:
+radial-gradient(circle,
+rgba(212,175,55,.25),
+transparent 70%);
+filter:blur(70px);
+animation:floatGlow 8s infinite alternate;
+}
+
+@keyframes floatGlow{
+to{
+transform:translate(60px,30px);
+}
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+max-width:800px;
+}
+
+.hero h1{
+font-size:90px;
+color:#D4AF37;
+text-shadow:0 0 25px rgba(212,175,55,.6);
+margin-bottom:15px;
+}
+
+.hero p{
+font-size:20px;
+line-height:1.8;
+margin-bottom:30px;
+}
+
+.btn{
+display:inline-block;
+background:#D4AF37;
+color:#000;
+padding:14px 32px;
+border-radius:40px;
+font-weight:bold;
+text-decoration:none;
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-3px);
+box-shadow:0 0 25px rgba(212,175,55,.5);
+}
+
+section{
+padding:90px 8%;
+}
+
+.title{
+text-align:center;
+font-size:42px;
+color:#D4AF37;
+margin-bottom:40px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.card{
+position:relative;
+overflow:hidden;
+background:rgba(255,255,255,.03);
+border:1px solid rgba(212,175,55,.25);
+backdrop-filter:blur(15px);
+padding:30px;
+border-radius:24px;
+text-align:center;
+transition:.4s;
+box-shadow:
+0 0 20px rgba(212,175,55,.08),
+0 0 50px rgba(212,175,55,.03);
+}
+
+.card::before{
+content:"";
+position:absolute;
+top:0;
+left:-120%;
+width:100%;
+height:100%;
+background:
+linear-gradient(
+90deg,
+transparent,
+rgba(212,175,55,.12),
+transparent
+);
+transition:.8s;
+}
+
+.card:hover::before{
+left:120%;
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:
+0 0 30px rgba(212,175,55,.18),
+0 0 60px rgba(212,175,55,.08);
+border-color:#D4AF37;
+}
+
+.card i{
+font-size:42px;
+color:#D4AF37;
+margin-bottom:15px;
+text-shadow:
+0 0 15px rgba(212,175,55,.5);
+}
+
+.stat-number{
+font-size:52px;
+font-weight:900;
+color:#D4AF37;
+margin-bottom:12px;
+text-shadow:
+0 0 10px rgba(212,175,55,.5),
+0 0 20px rgba(212,175,55,.3);
+letter-spacing:1px;
+display:block;
+}
+
+.gallery img{
+width:100%;
+height:280px;
+object-fit:cover;
+border-radius:18px;
+border:2px solid #D4AF37;
+transition:.3s;
+}
+
+.gallery img:hover{
+transform:scale(1.03);
+box-shadow:0 0 30px rgba(212,175,55,.3);
+}
+
+.booking-form input{
+width:100%;
+padding:12px;
+margin:10px 0;
+border-radius:10px;
+border:none;
+}
+
+.social{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.social a{
+text-decoration:none;
+background:#111;
+border:1px solid #D4AF37;
+color:#fff;
+padding:15px 25px;
+border-radius:15px;
+}
+
+.float{
+position:fixed;
+right:20px;
+bottom:20px;
+width:65px;
+height:65px;
+background:#25D366;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:32px;
+color:#fff;
+text-decoration:none;
+z-index:999;
+}
+
+footer{
+text-align:center;
+padding:40px;
+border-top:1px solid rgba(212,175,55,.3);
+}
+
+.hamburger{
+display:none;
+font-size:28px;
+color:#D4AF37;
+cursor:pointer;
+}
+
+@media(max-width:768px){
+
+.hamburger{
+display:block;
+}
+
+.menu{
+display:none;
+width:100%;
+flex-direction:column;
+text-align:center;
+margin-top:15px;
+}
+
+.menu.active{
+display:flex;
+}
+
+.menu a{
+margin:12px 0;
+}
+
+}
+@media(max-width:768px){
+.hero h1{font-size:42px}
+.menu{display:none}
+.logo img{height:55px}
+}
+
+</style>
+</head>
+<body>
+
+<nav>
+<div class="logo">
+<img src="logo.png" alt="Luxury Stay">
+</div>
+
+<div class="hamburger" onclick="toggleMenu()">
+<i class="fas fa-bars"></i>
+</div>
+
+<div class="menu" id="menu">
+<a href="#home">Home</a>
+<a href="#fasilitas">Fasilitas</a>
+<a href="#galeri">Galeri</a>
+<a href="#booking">Booking</a>
+<a href="#sosial">Sosial Media</a>
+</div>
+</nav>
+
+<section class="hero" id="home">
+
+<canvas id="particles"></canvas>
+
+<div class="gold-glow"></div>
+
+<div class="hero-content">
+
+<h1>LUXURY STAY</h1>
+
+<p>
+Jarrdin Apartement Cihampelas Bandung
+<br>
+Nyaman • Bersih • Strategis • Fasilitas Lengkap
+</p>
+
+<a href="#booking" class="btn">
+BOOKING SEKARANG
+</a>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="title">
+STATISTIK
+</h2>
+
+<div class="card">
+<i class="fas fa-users"></i>
+<div class="stat-number">500+</div>
+<div>Tamu Menginap</div>
+</div>
+
+<div class="card">
+<i class="fas fa-star"></i>
+<div class="stat-number">4.9★</div>
+<div>Rating Tamu</div>
+</div>
+
+<div class="card">
+<i class="fas fa-headset"></i>
+<div class="stat-number">24H</div>
+<div>Support Admin</div>
+</div>
+
+<div class="card">
+<i class="fas fa-check-circle"></i>
+<div class="stat-number">100%</div>
+<div>Unit Bersih</div>
+</div>
+
+</section>
+
+<section id="fasilitas">
+
+<h2 class="title">
+FASILITAS
+</h2>
+
+<div class="grid">
+
+<div class="card">
+<i class="fas fa-snowflake"></i>
+<h3>AC Dingin</h3>
+</div>
+
+<div class="card">
+<i class="fas fa-tv"></i>
+<h3>Smart TV</h3>
+</div>
+
+<div class="card">
+<i class="fas fa-wifi"></i>
+<h3>WiFi Cepat</h3>
+</div>
+
+<div class="card">
+<i class="fas fa-pump-soap"></i>
+<h3>Peralatan Mandi Lengkap</h3>
+</div>
+
+<div class="card">
+<i class="fas fa-utensils"></i>
+<h3>Peralatan Dapur Lengkap</h3>
+</div>
+
+<div class="card">
+<i class="fas fa-car"></i>
+<h3>Area Parkir</h3>
+</div>
+
+</div>
+
+</section>
+
+<section id="galeri">
+
+<h2 class="title">
+GALERI UNIT
+</h2>
+
+<div class="grid gallery">
+
+<img src="kamar1.jpeg">
+
+<img src="kamar2.jpeg">
+
+<img src="kamar3.jpeg">
+
+<img src="kamar4.jpeg">
+
+<img src="kamar5.jpeg">
+
+<img src="kamar6.jpeg">
+
+<img src="kamar7.jpeg">
+
+<img src="kamar8.jpeg">
+
+<img src="kamar9.jpeg">
+
+<img src="kamar10.jpeg">
+
+<img src="kamar11.jpeg">
+
+<img src="kamar12.jpeg">
+
+</div>
+
+</section>
+
+<section id="testimoni">
+
+<h2 class="title">
+TESTIMONI TAMU
+</h2>
+
+<div class="grid">
+
+<div class="card">
+⭐⭐⭐⭐⭐
+<br><br>
+Kamarnya bersih dan nyaman.
+</div>
+
+<div class="card">
+⭐⭐⭐⭐⭐
+<br><br>
+Lokasi strategis dekat pusat kota.
+</div>
+
+<div class="card">
+⭐⭐⭐⭐⭐
+<br><br>
+Check-in mudah dan cepat.
+</div>
+
+</div>
+
+</section>
+
+<section id="booking">
+
+<h2 class="title">
+FORM BOOKING
+</h2>
+
+<div class="card booking-form">
+
+<input id="nama"
+placeholder="Nama Lengkap">
+
+<input id="checkin"
+type="date">
+
+<input id="checkout"
+type="date">
+
+<input id="tamu"
+placeholder="Jumlah Tamu">
+
+<br><br>
+
+<a href="#"
+class="btn"
+onclick="bookingWA()">
+
+Kirim Booking
+
+</a>
+
+</div>
+
+<br><br>
+
+<h2 class="title">
+PILIH ADMIN
+</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>ADMIN 1</h3>
+
+<br>
+
+<a class="btn"
+href="https://wa.me/6282114166405">
+
+WhatsApp
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>ADMIN 2</h3>
+
+<br>
+
+<a class="btn"
+href="https://wa.me/6283168242241">
+
+WhatsApp
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>ADMIN 3</h3>
+
+<br>
+
+<a class="btn"
+href="https://wa.me/6283821082181">
+
+WhatsApp
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="sosial">
+
+<h2 class="title">
+SOSIAL MEDIA
+</h2>
+
+<div class="social">
+
+<a href="https://www.facebook.com/share/1B8ZGeM3Cv/">
+<i class="fab fa-facebook-f"></i>
+Facebook
+</a>
+
+<a href="https://www.tiktok.com/@luxurystay_jarrdin">
+<i class="fab fa-tiktok"></i>
+TikTok
+</a>
+
+</div>
+
+</section>
+
+<section id="lokasi">
+
+<h2 class="title">
+LOKASI APARTEMENT
+</h2>
+
+<div class="card">
+
+<iframe
+src="https://maps.google.com/maps?q=cihampelas%20bandung&t=&z=13&ie=UTF8&iwloc=&output=embed"
+width="100%"
+height="450"
+style="border:0;border-radius:15px;"
+allowfullscreen=""
+loading="lazy">
+</iframe>
+
+</div>
+
+</section>
+
+<footer>
+
+<h3 style="color:#D4AF37;">
+LUXURY STAY JARRDIN
+</h3>
+
+<br>
+
+<p>
+Apartement Cihampelas Bandung
+</p>
+
+<p>
+Nyaman • Bersih • Strategis
+</p>
+
+</footer>
+
+<a class="float"
+href="https://wa.me/6282114166405">
+
+<i class="fab fa-whatsapp"></i>
+
+</a>
+
+<script>
+
+
+function bookingWA(){
+
+let text=
+`Halo Luxury Stay Jarrdin%0A%0A
+Nama : ${nama.value}%0A
+Check In : ${checkin.value}%0A
+Check Out : ${checkout.value}%0A
+Jumlah Tamu : ${tamu.value}`;
+
+window.open(
+"https://wa.me/6282114166405?text="+text
+);
+
+}
+
+const canvas=document.getElementById('particles');
+
+const ctx=canvas.getContext('2d');
+
+canvas.width=window.innerWidth;
+
+canvas.height=window.innerHeight;
+
+let particles=[...Array(40)].map(()=>({
+
+x:Math.random()*canvas.width,
+
+y:Math.random()*canvas.height,
+
+r:Math.random()*3+1
+
+}));
+
+function animate(){
+
+ctx.clearRect(
+0,
+0,
+canvas.width,
+canvas.height
+);
+
+ctx.fillStyle='rgba(212,175,55,.7)';
+
+particles.forEach(p=>{
+
+ctx.beginPath();
+
+ctx.arc(
+p.x,
+p.y,
+p.r,
+0,
+Math.PI*2
+);
+
+ctx.fill();
+
+p.y-=0.3;
+
+if(p.y<0){
+
+p.y=canvas.height;
+
+}
+
+});
+
+requestAnimationFrame(animate);
+
+}
+
+animate();
+
+window.addEventListener('resize',()=>{
+
+canvas.width=window.innerWidth;
+
+canvas.height=window.innerHeight;
+
+});
+
+function toggleMenu(){
+document.getElementById("menu")
+.classList.toggle("active");
+}
+
+</script>
+
+</body>
+</html>
